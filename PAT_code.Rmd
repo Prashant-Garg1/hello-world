@@ -1,0 +1,47 @@
+---
+title: "test_markdown"
+author: "Prashant Garg"
+date: "24/06/2021"
+output: html_document
+---
+
+## Create PAT
+Get a personal access token (PAT) and use that as your credential for HTTPS operations.
+
+The usethis package has a helper function that takes you to the web form to create a PAT, with the added benefit that it pre-selects the recommended scopes:
+
+Once on the page, click 'generate token' and then store the PAT somewhere 
+(I have emailed it to myself.)
+
+```{r}
+install.packages('usethis')
+
+library(usethis)
+
+usethis::create_github_token()
+```
+
+
+## Store your credentials
+
+First we need to install credentials.
+Insert the PAT when requested.
+
+```{r}
+install.packages("credentials")
+
+library(credentials)
+
+set_github_pat()
+```
+
+Now, set the credentials with the following commands.
+
+```{r}
+install.packages("gitcreds")
+
+library(gitcreds)
+
+gitcreds_set()
+```
+
